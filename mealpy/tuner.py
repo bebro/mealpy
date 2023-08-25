@@ -347,6 +347,8 @@ class Tuner:
                 self.problem = Problem(**problem)
             else:
                 raise TypeError(f"Problem is not an instance of Problem class or a Python dict.")
+        else:
+            self.problem = problem
         self.n_trials = self.validator.check_int("n_trials", n_trials, [1, 100000])
         n_cpus = None
         if (n_jobs is not None) and (n_jobs >= 1):
